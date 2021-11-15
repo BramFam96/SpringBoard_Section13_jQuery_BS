@@ -91,7 +91,7 @@
 				</div>
 				<div class="col-sm-4">
 					Rating
-					<input class="form-control" type="text" />
+					<input class="form-control" type="number" min="0" max="5" />
 				</div>
 				<div class="col mt-4">
 					<button type="sumbit">Add it dawwg</button>
@@ -134,8 +134,9 @@
 			})
 			$('.input-wrapper').on('submit', (e) => {
 				e.preventDefault()
-				$(`<li class = 'move-rating'>${$('.input-wrapper').find('input').val()} |
-				${$('.input-wrapper').find('input').eq(0).val()} 
+				const movie = $('.input-wrapper').find('input').val()
+				const rating = $('.input-wrapper').find('input').eq(1).val()
+				$(`<li class = 'move-rating'>${movie} -	${rating} stars
 				<button> &times </button> </li>`).appendTo('ul')
 			})
 		</script>
